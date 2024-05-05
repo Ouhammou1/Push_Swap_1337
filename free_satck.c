@@ -1,6 +1,6 @@
 #include "push_swap.h"
 
-void freeStack(stack *s) 
+void    freeStack(stack *s) 
 {
     if (s == NULL)
     {
@@ -25,5 +25,4 @@ void    ft_free_list(char **list)
                 i++;
         }
         free(list);
-
 }

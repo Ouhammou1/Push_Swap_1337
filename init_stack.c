@@ -28,7 +28,7 @@ int counter(char **av)
             {
                 if(!ft_isdigit(list[j][k]))
                 {
-                    printf("Error\n");
+                    ft_putstr("Error\n");
                     exit(1);
                 }
                 k++;
@@ -69,15 +69,14 @@ void init_stack(stack *a, char **av)
         {
             if(error_syntax_pp(list[k]) == 1)
             {
-                printf("Error\n");
+                ft_putstr("Errlor\n");
                 exit(1);
             }
-            int n = ft_atoi(list[k]);
-            if(n > INT_MAX || n < INT_MIN)
+            long long int n = ft_atoi(list[k]);
+
+            if( n > INT_MAX || n < INT_MIN)
             {
-                printf(" \nMAX %d \n ",INT_MAX);
-                printf(" \nMIN %d \n ",INT_MIN);
-                printf("Error\n");
+                ft_putstr("Error\n");
                 exit(1);
             }   
 
@@ -85,7 +84,7 @@ void init_stack(stack *a, char **av)
 
             if(error_duplicate(a,n))
             {
-                printf("Error\n");
+                ft_putstr("Error\n");
                 exit(1);
             }
             a->index++;

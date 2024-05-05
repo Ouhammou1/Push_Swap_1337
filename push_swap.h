@@ -21,7 +21,7 @@ void    init_stack( stack *a, char **av);
 int     ft_isdigit(int c);
 int     counter(char **av);
 void    print_stack(stack *a);
-int     ft_atoi( char *str);
+long long int     ft_atoi( char *str);
 
 //      sort stack 3
 
@@ -38,9 +38,8 @@ int     indiceMin(stack *a, int taille) ;
 // sort stack 5
 
 void     sort_five(stack *a, int len);
-void     staack_b(stack *a);
 void     sort_stack(stack *a, stack *b, int ondx);
-void     ft_function(stack *a,stack *b,int indx);
+
 
 //          RULES
 void    swap_a(stack *a);
@@ -54,6 +53,9 @@ void    rr(stack *a, stack *b);
 void    reverse_r_a(stack *a);
 void    reverse_r_b(stack *b);
 void    rrr(stack *a, stack *b);
+// help rules 
+void    staack_aaa(stack *a);
+void     staack_b(stack *a);
 
 
 
@@ -65,7 +67,7 @@ void    rrr(stack *a, stack *b);
 
 
 //  RANGE  100 NUMBERS
-void 		ft_range(stack *a,int len, int min, int max);
+void 		ft_range(stack *a,int len);
 int         *ft_tab_indx(stack *a,int len);
 int         ft_return_index(int *rr, int len , int data);
 int         ft_find_max(stack *b, int len);
@@ -73,13 +75,15 @@ int         ft_find_max(stack *b, int len);
 
 
 // SORT MORE THAN 500 NUMBERS
-void        ft_sort_stack(stack *a,int  len, int min, int max);
-void        use_stack_b(int    *rr, stack *a, stack *b, int min , int max , int len);
+void        ft_sort_stack(stack *a,int  len);
+void        use_stack_b(int    *rr, stack *a, stack *b, int len);
 void        use_stack_a(stack *a,stack *b);
 
 //  handele Error 
 int	    error_syntax_pp(char *str) ;
 int		error_duplicate(stack *a,int nbr);
+void 	ft_putstr(char 	*str);
+
 
 
 #endif

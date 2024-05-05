@@ -98,12 +98,12 @@ char    **ft_split(char *s, char c)
     return list;
 }
 
-int     ft_atoi( char *str)
+long long int     ft_atoi( char *str)
 {
         int                                             i;
         int                                             s;
-        //unsigned long long int  r;
-        int  r;
+        unsigned long long int  r;
+        // int  r;
         i = 0;
         s = 1;
         r = 0;
@@ -118,10 +118,10 @@ int     ft_atoi( char *str)
         while (str[i] >= 48 && str[i] <= 57)
         {
                 r = (r * 10) + (str[i] - 48);
-                // if (s == 1 && r > 9223372036854775807)
-                //         return (-1);
-                // if (s == (-1) && r > 9223372036854775807)
-                //         return (0);
+                if (s == 1 && r > 9223372036854775807)
+                        return (-1);
+                if (s == (-1) && r > 9223372036854775807)
+                        return (0);
                 i++;
         }
         return (r * s);

@@ -1,9 +1,17 @@
 #include "push_swap.h"
 
-int	error_syntax_pp(char *str) 
+void 	ft_putstr(char 	*str)
+{
+	int i =0;
+	while (str[i] != '\0')
+	{
+		write(1,&str[i],1);
+		i++;
+	}
+}
+int	error_syntax_pp(char *str)
 {
     int  i=0;
-	// printf(">>>>>>>>>>>>>>>>>>     |%c|\n\n",str[0]);
 	if ((str[i] != '+' || str[i] != '-') && (str[i+1] <= '0' && str[i+1] >= '9'))
 	{
 			return (1);
@@ -23,6 +31,7 @@ int	error_syntax_pp(char *str)
 	}
 	return (0);
 }
+
 int		error_duplicate(stack *a,int nbr)
 {
 	int len = stack_len(&a);

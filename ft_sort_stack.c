@@ -1,6 +1,8 @@
 #include "push_swap.h"
-void    use_stack_b(int    *rr,stack *a,stack *b,int min ,int max ,int len)
+void    use_stack_b(int    *rr,stack *a,stack *b ,int len)
 {
+    int min =0;
+    int max =30;
         while (a->index != 0)
     {
         int indx = ft_return_index(rr,len,a->tab[0]);
@@ -21,7 +23,7 @@ void    use_stack_b(int    *rr,stack *a,stack *b,int min ,int max ,int len)
             min++;
             max++;
         }
-}
+    }
 }
 void    use_stack_a(stack *a,stack *b)
 {
@@ -50,7 +52,7 @@ void    use_stack_a(stack *a,stack *b)
 }
 
 
-void        ft_sort_stack(stack *a,int  len, int min, int max)
+void        ft_sort_stack(stack *a,int  len)
 {
 	stack *b; 
     b = malloc(sizeof(stack));
@@ -61,7 +63,7 @@ void        ft_sort_stack(stack *a,int  len, int min, int max)
         return ;
     
     int *rr = ft_tab_indx(a,len);
-    use_stack_b(rr,a,b,min ,max ,len);
+    use_stack_b(rr,a,b,len);
 
     use_stack_a(a, b);
 

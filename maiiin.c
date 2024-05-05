@@ -1,7 +1,5 @@
 #include "push_swap.h"
 
-
-
 void print_stack(stack *a)
 {
     printf("\nElements of Stack:\n");
@@ -16,8 +14,6 @@ void print_stack(stack *a)
 }
 void ft_staack(stack *a, int len)
 {
-    int min=0;
-    int max=15;
 
     if( stack_test(a) == false)
     {
@@ -33,12 +29,11 @@ void ft_staack(stack *a, int len)
         else if ( stack_len(&a) == 5 )
             sort_five(a,len);
         else if(stack_len(&a) <= 100)
-            ft_range(a,len, min, max);
+            ft_range(a,len);
 
         else
         {
-            max =30;
-            ft_sort_stack(a, len, min, max);
+            ft_sort_stack(a, len);
         }
     } 
 }
@@ -48,25 +43,22 @@ int main(int ac, char **av)
     int len = counter(av);
     if (ac == 1)
     {
-        printf("Enter the elements:\n");
+        printf("Enter The Elements : \n");
         return 0;
     }
-
     a = malloc(sizeof(stack));
     if (a == NULL )
     {
-        printf("Memory allocation failed.\n");
+        printf("Memory Allocation Failed : \n");
         exit(0);
     }
-
+    
     init_stack(a, av);
+    ft_staack(a, len);
 
-ft_staack(a,len);
-
-  
     // print_stack(a);
-   freeStack(a);
+    // freeStack(a);
+    // system("leaks push_swap");
 
-// system("leaks push_swap");
     return 0;
 }

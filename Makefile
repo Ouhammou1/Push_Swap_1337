@@ -1,6 +1,6 @@
 CC = cc
 CFLAGS=-Wall -Wextra -Werror
-CFILES= ft_split.c init_stack.c  stack_test.c rules.c maiiin.c sort_true.c sort_five.c fouur.c  ft_range.c ft_sort_stack.c handele.c free_satck.c
+CFILES= ft_split.c init_stack.c  ft_range_opera.c  stack_test.c rules.c rules_1.c  rules_2.c  maiiin.c sort_true.c sort_five.c fouur.c  ft_range.c ft_sort_stack.c handele.c free_satck.c
 NAME = push_swap.a
 
 

@@ -6,34 +6,44 @@
 
 #include <stdio.h>
 
-int findInsertionIndex(int arr[], int n, int num) {
-    int low = 0;
-    int high = n - 1;
-    int mid = 0;
+void ft_tab_indx(int *arr,int len)
+{
+    
 
-    while (low <= high) {
-        mid = (low + high) / 2;
 
-        if (arr[mid] == num)
-            return mid;
+    int  j, temp;
+    int i = 0;
+    while ( i++ < len -1)
+    {
+        j = i + 1;
+        while ( j < len)
+        {
+        temp = arr[i];
+            if (temp > arr[j] )
+            {
+                arr[i] = arr[j];
+                arr[j] = temp;
+            }
+            j++;
+        }
 
-        if (arr[mid] < num)
-            low = mid + 1;
-        else
-            high = mid - 1;
+    }    
+    int k=0;
+    while (k < len)
+    {
+        printf(" arr[i] %d \n",arr[k]);
+        k++;
     }
-
-    return low;
+    
+    //return arr;  
 }
-
 int main() {
-    int arr[] = {1, 3, 5, 7, 9};
-    int n = sizeof(arr) / sizeof(arr[0]);
-    int num = 4;
+    int arr[] = {1, 3, -2,5, 13,2,15, 7, 9};
+    int num = 9;
 
-    int index = findInsertionIndex(arr, n, num);
+   ft_tab_indx(arr, num);
 
-    printf("L'indice pour insérer %d dans le tableau tout en maintenant l'ordre croissant est : %d\n", num, index);
+    // printf("L'indice pour insérer %d dans le tableau tout en maintenant l'ordre croissant est : %d\n", num, index);
 
     return 0;
 }

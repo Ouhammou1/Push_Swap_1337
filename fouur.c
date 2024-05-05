@@ -58,6 +58,4 @@ void    sort_four(stack *a ,int len)
         sort_true(a);   
     }
     push_in_a(a,b);
-    //freeStack(b);
-
 }
