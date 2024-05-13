@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-void	staack_b(stack *a)
+void	staack_b(t_stack *a)
 {
 	int	i;
 
@@ -25,7 +25,7 @@ void	staack_b(stack *a)
 	a->index--;
 }
 
-void	staack_aaa(stack *a)
+void	staack_aaa(t_stack *a)
 {
 	int	i;
 
@@ -38,8 +38,8 @@ void	staack_aaa(stack *a)
 	a->index++;
 }
 
-// sa  (swap a): Swap the first 2 elements at the top of stack a.
-void	swap_a(stack *a)
+// sa  (swap a): Swap the first 2 elements at the top of t_stack a.
+void	swap_a(t_stack *a)
 {
 	int	i;
 	int	temp;
@@ -55,8 +55,8 @@ void	swap_a(stack *a)
 	ft_putstr("sa\n");
 }
 
-// sb (swap b): Swap the first 2 elements at the top of stack b
-void	swap_b(stack *b)
+// sb (swap b): Swap the first 2 elements at the top of t_stack b
+void	swap_b(t_stack *b)
 {
 	int	i;
 	int	temp;
@@ -73,7 +73,7 @@ void	swap_b(stack *b)
 }
 // ss : sa and sb at the same time.
 
-void	ss(stack *a, stack *b)
+void	ss(t_stack *a, t_stack *b)
 {
 	swap_a(a);
 	swap_b(b);

@@ -14,7 +14,7 @@
 
 // pb (push b): Take the first element at the top of a
 
-void	push_in_b(stack *a, stack *b)
+void	push_in_b(t_stack *a, t_stack *b)
 {
 	int	i;
 	int	start;
@@ -39,7 +39,7 @@ void	push_in_b(stack *a, stack *b)
 	ft_putstr("pb\n");
 }
 
-void	push_in_a(stack *a, stack *b)
+void	push_in_a(t_stack *a, t_stack *b)
 {
 	int	i;
 
@@ -52,8 +52,8 @@ void	push_in_a(stack *a, stack *b)
 	ft_putstr("pa\n");
 }
 
-//   ra (rotate a): Shift up all elements of stack a by
-void	rotate_a(stack *a)
+//   ra (rotate a): Shift up all elements of t_stack a by
+void	rotate_a(t_stack *a)
 {
 	int	tmp;
 	int	i;
@@ -69,8 +69,8 @@ void	rotate_a(stack *a)
 	ft_putstr("ra\n");
 }
 
-// rb (rotate b): Shift up all elements of stack b by 1.
-void	rotate_b(stack *b)
+// rb (rotate b): Shift up all elements of t_stack b by 1.
+void	rotate_b(t_stack *b)
 {
 	int	tmp;
 	int	i;
@@ -88,10 +88,10 @@ void	rotate_b(stack *b)
 
 // rr : ra and rb at the same time.
 
-void	rr(stack *a, stack *b)
+void	rr(t_stack *a, t_stack *b)
 {
 	rotate_a(a);
 	rotate_b(b);
 	ft_putstr("rr\n");
 }
-// rra (reverse rotate a): Shift down all elements of stack a by 1.
+// rra (reverse rotate a): Shift down all elements of t_stack a by 1.

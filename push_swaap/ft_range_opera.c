@@ -36,7 +36,7 @@ void	ft_sort_tab(int *arr, int len)
 	}
 }
 
-int	*ft_tab_indx(stack *a, int len)
+int	*ft_tab_indx(t_stack *a, int len)
 {
 	int	*arr;
 	int	i;
@@ -70,7 +70,7 @@ int	ft_return_index(int *arr, int len, int data)
 	return (0);
 }
 
-int	ft_find_max(stack *b, int len)
+int	ft_find_max(t_stack *b, int len)
 {
 	int	i;
 	int	tab[len];

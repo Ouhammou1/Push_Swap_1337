@@ -69,50 +69,47 @@ int	counter(char **av)
 	return (count);
 }
 
-void	stock_nbr_ina(stack *a, char **list, int indx)
+void	stock_nbr_ina(t_stack *a, char **list, int k)
 {
-	int				k;
 	long long int	n;
 
-	k = 0;
 	while (list[k])
 	{
 		if (error_syntax_pp(list[k]) == 1)
 		{
-			ft_putstr("1Errlor\n");
+			ft_putstr("Error\n");
 			exit(1);
 		}
 		n = ft_atoi(list[k]);
 		if (n > INT_MAX || n < INT_MIN)
 		{
-			ft_putstr("2Error\n");
+			ft_putstr("Error\n");
 			exit(1);
 		}
-		a->tab[indx] = n;
-		// if (error_duplicate(a, n))
-		// {
-		// 	ft_putstr("3Error\n");
-		// 	exit(1);
-		// }
+		a->tab[a->index] = n;
+		if (error_duplicate(a, n) == 1)
+		{
+			ft_putstr("Error\n");
+			exit(1);
+		}
 		a->index++;
 		k++;
 	}
 }
 
-void	init_stack(stack *a, char **av)
+void	init_t_stack(t_stack *a, char **av)
 {
 	int		i;
 	char	**list;
-	int		indx;
+	int		k;
 
 	i = 1;
-	indx = 0;
 	while (av[i] != NULL)
 	{
+		k = 0;
 		list = ft_split(av[i], ' ');
-		stock_nbr_ina(a, list, indx);
+		stock_nbr_ina(a, list, k);
 		ft_free_list(list);
 		i++;
-		indx++;
 	}
 }

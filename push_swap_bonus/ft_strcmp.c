@@ -1,38 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stack_test.c                                       :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bouhammo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/06 15:36:56 by bouhammo          #+#    #+#             */
-/*   Updated: 2024/05/06 15:36:58 by bouhammo         ###   ########.fr       */
+/*   Created: 2024/05/13 12:34:59 by bouhammo          #+#    #+#             */
+/*   Updated: 2024/05/13 12:35:01 by bouhammo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
-
-bool	stack_test(stack *a)
+int	ft_strcmp(char *s1, char *s2)
 {
 	int	i;
 
-	if (!a)
-	{
-		exit(0);
-	}
 	i = 0;
-	while (i < a->index - 1)
-	{
-		if (a->tab[i] > a->tab[i + 1])
-		{
-			return (false);
-		}
+	while (s1[i] == s2[i] && s1[i] != '\0' && s2[i] != '\0')
 		i++;
-	}
-	return (true);
-}
-
-int	stack_len(stack **a)
-{
-	return ((*a)->index);
+	return (s1[i] - s2[i]);
 }

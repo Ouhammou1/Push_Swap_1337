@@ -1,40 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fouur.c                                            :+:      :+:    :+:   */
+/*   sort_five.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bouhammo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/06 15:33:17 by bouhammo          #+#    #+#             */
-/*   Updated: 2024/05/06 15:33:19 by bouhammo         ###   ########.fr       */
+/*   Created: 2024/05/06 15:36:25 by bouhammo          #+#    #+#             */
+/*   Updated: 2024/05/06 15:36:26 by bouhammo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	indice_min(stack *a, int taille)
-{
-	int	indx;
-	int	i;
-
-	indx = 0;
-	i = 1;
-	while (i < taille)
-	{
-		if (a->tab[i] < a->tab[indx])
-		{
-			indx = i;
-		}
-		i++;
-	}
-	return (indx);
-}
-
-void	sort_f(stack *a, stack *b, int indx)
+void	sort_t_stack(t_stack *a, t_stack *b, int indx)
 {
 	int	len;
 
-	len = stack_len(&a);
+	len = t_stack_len(&a);
 	if (indx <= len / 2)
 	{
 		while (indx != 0)
@@ -54,12 +36,12 @@ void	sort_f(stack *a, stack *b, int indx)
 	push_in_b(a, b);
 }
 
-void	sort_four(stack *a, int len)
+void	sort_five(t_stack *a, int len)
 {
-	stack	*b;
+	t_stack	*b;
 	int		indx;
 
-	b = malloc(sizeof(stack));
+	b = malloc(sizeof(t_stack));
 	if (!b)
 		return ;
 	b->index = 0;
@@ -67,11 +49,11 @@ void	sort_four(stack *a, int len)
 	if (!b->tab)
 		return ;
 	indx = indice_min(a, len);
-	sort_f(a, b, indx);
-	if (stack_test(a) == false)
+	sort_t_stack(a, b, indx);
+	if (t_stack_test(a) == false)
 	{
-		sort_true(a);
+		sort_four(a, len);
 	}
 	push_in_a(a, b);
-	free_stack(b);
+	free_t_stack(b);
 }

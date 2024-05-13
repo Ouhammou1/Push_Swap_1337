@@ -51,12 +51,12 @@ int	error_syntax_pp(char *str)
 	return (0);
 }
 
-int	error_duplicate(stack *a, int nbr)
+int	error_duplicate(t_stack *a, int nbr)
 {
 	int	len;
 	int	i;
 
-	len = stack_len(&a);
+	len = t_stack_len(&a);
 	i = 0;
 	while (i < len)
 	{
