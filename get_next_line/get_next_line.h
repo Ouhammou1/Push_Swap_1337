@@ -3,17 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bouhammo <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: bouhammo <bouhammo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 00:24:49 by bouhammo          #+#    #+#             */
-/*   Updated: 2024/03/28 00:24:52 by bouhammo         ###   ########.fr       */
+/*   Updated: 2024/05/26 20:32:46 by bouhammo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H
 
-# include <stddef.h>
 # include <stdlib.h>
 # include <unistd.h>
 

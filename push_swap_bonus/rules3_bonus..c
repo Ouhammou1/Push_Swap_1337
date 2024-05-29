@@ -1,36 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   free_stack.c                                       :+:      :+:    :+:   */
+/*   rules3.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bouhammo <bouhammo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/06 15:33:27 by bouhammo          #+#    #+#             */
-/*   Updated: 2024/05/28 19:21:29 by bouhammo         ###   ########.fr       */
+/*   Created: 2024/05/28 15:51:27 by bouhammo          #+#    #+#             */
+/*   Updated: 2024/05/28 20:40:26 by bouhammo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swaap/push_swap.h"
+#include "push_swap_bonus.h"
 
-void	free_t_stack(t_stack *s)
+void	b_ss(t_stack *a, t_stack *b)
 {
-	if (s == NULL)
-	{
-		return ;
-	}
-	free(s->tab);
-	free(s);
+	b_swap_a(a);
+	b_swap_b(b);
 }
 
-void	ft_free_list(char **list)
+void	b_rr(t_stack *a, t_stack *b)
 {
-	int	i;
+	b_rotate_a(a);
+	b_rotate_b(b);
+}
 
-	i = 0;
-	while (list[i] != NULL)
-	{
-		free(list[i]);
-		i++;
-	}
-	free(list);
+void	b_rrr(t_stack *a, t_stack *b)
+{
+	b_reverse_r_a(a);
+	b_reverse_r_b(b);
 }

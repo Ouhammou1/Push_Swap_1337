@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bouhammo <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: bouhammo <bouhammo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 15:35:38 by bouhammo          #+#    #+#             */
-/*   Updated: 2024/05/06 15:35:40 by bouhammo         ###   ########.fr       */
+/*   Updated: 2024/05/28 21:54:35 by bouhammo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 # include <limits.h>
 # include <stdbool.h>
-# include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
 
@@ -23,7 +22,7 @@ typedef struct t_t_stack
 {
 	int			index;
 	int			*tab;
-}				t_stack;
+}t_stack;
 
 void			ft_free_list(char **list);
 void			free_t_stack(t_stack *s);
@@ -43,7 +42,6 @@ void			stock_nbr_ina(t_stack *a, char **list, int indx);
 int				ft_isdigit(int c);
 int				counter(char **av);
 int				ft_count_nbr(char **list);
-void			print_t_stack(t_stack *a);
 long long int	ft_atoi(char *str);
 char			*ft_strdup(char *s);
 

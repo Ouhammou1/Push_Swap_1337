@@ -3,29 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   maiiin.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bouhammo <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: bouhammo <bouhammo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 15:35:23 by bouhammo          #+#    #+#             */
-/*   Updated: 2024/05/06 15:35:25 by bouhammo         ###   ########.fr       */
+/*   Updated: 2024/05/28 20:37:44 by bouhammo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-void	print_t_stack(t_stack *a)
-{
-	t_stack	*l;
-	int		i;
-
-	ft_putstr("\nElements of t_stack:\n");
-	l = a;
-	i = 0;
-	while (i < l->index)
-	{
-		printf("%d          --->>>> index  = %d\n", l->tab[i], i);
-		i++;
-	}
-}
 
 void	ft_staack(t_stack *a, int len)
 {

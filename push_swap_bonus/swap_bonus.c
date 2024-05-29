@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   swap_bonus.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bouhammo <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: bouhammo <bouhammo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 11:57:08 by bouhammo          #+#    #+#             */
-/*   Updated: 2024/05/13 11:57:10 by bouhammo         ###   ########.fr       */
+/*   Updated: 2024/05/28 20:40:39 by bouhammo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,18 @@
 #include "../push_swaap/push_swap.h"
 #include "push_swap_bonus.h"
 
-void	print_t_stack(t_stack *a)
+void	ft_complete(t_stack *a, t_stack *b, char *str)
 {
-	t_stack	*l;
-	int		i;
-
-	ft_putstr("\nElements of t_stack:\n");
-	l = a;
-	i = 0;
-	while (i < l->index)
+	if (ft_strcmp(str, "ss\n") == 0)
+		b_ss(a, b);
+	else if (ft_strcmp(str, "rr\n") == 0)
+		b_rr(a, b);
+	else if (ft_strcmp(str, "rrr\n") == 0)
+		b_rrr(a, b);
+	else
 	{
-		printf("%d         			--->>>> index  = %d\n", l->tab[i], i);
-		i++;
+		ft_putstr("Error\n");
+		exit(0);
 	}
 }
 
@@ -47,14 +47,8 @@ void	check_rues(t_stack *a, t_stack *b, char *str)
 		b_swap_a(a);
 	else if (ft_strcmp(str, "sb\n") == 0)
 		b_swap_b(b);
-	else if (ft_strcmp(str, "rrr\n") == 0 || ft_strcmp(str, "rr\n") == 0
-		|| ft_strcmp(str, "ss\n") == 0)
-		ft_putstr("");
 	else
-	{
-		ft_putstr("Error\n");
-		exit(0);
-	}
+		ft_complete(a, b, str);
 }
 
 void	get_line(t_stack *a, int len)
@@ -73,8 +67,23 @@ void	get_line(t_stack *a, int len)
 	while (str != NULL)
 	{
 		check_rues(a, b, str);
+		free(str);
 		str = get_next_line(0);
 	}
+	free_t_stack(b);
+}
+
+void	ft_print(t_stack *a, int len)
+{
+	if (a->index >= len)
+	{
+		if (t_stack_test(a) == false)
+			ft_putstr("KO\n");
+		else
+			ft_putstr("OK\n");
+	}
+	else
+		ft_putstr("KO\n");
 }
 
 int	main(int ac, char **av)
@@ -95,10 +104,7 @@ int	main(int ac, char **av)
 		return (0);
 	init_t_stack(a, av);
 	get_line(a, len);
-	if (t_stack_test(a) == false)
-		ft_putstr("KO\n");
-	if (t_stack_test(a) == true)
-		ft_putstr("OK\n");
+	ft_print(a, len);
 	free_t_stack(a);
 	return (0);
 }

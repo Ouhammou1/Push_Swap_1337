@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_range_opera.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bouhammo <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: bouhammo <bouhammo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 15:33:56 by bouhammo          #+#    #+#             */
-/*   Updated: 2024/05/06 15:33:58 by bouhammo         ###   ########.fr       */
+/*   Updated: 2024/05/26 19:48:49 by bouhammo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,27 +73,28 @@ int	ft_return_index(int *arr, int len, int data)
 int	ft_find_max(t_stack *b, int len)
 {
 	int	i;
-	int	tab[len];
-	int	max_nbr;
-	int	max_index;
+	int	*arr;
+	int	tmp;
+	int	x;
 
+	arr = (int *)malloc(len * sizeof(int));
+	if (arr == NULL)
+		return (0);
+	i = -1;
+	while (++i < len)
+		arr[i] = b->tab[i];
 	i = 0;
-	while (i < len)
+	tmp = arr[0];
+	x = 0;
+	while (i < len - 1)
 	{
-		tab[i] = b->tab[i];
-		i++;
-	}
-	max_nbr = tab[0];
-	max_index = 0;
-	i = 1;
-	while (i < len)
-	{
-		if (tab[i] > max_nbr)
+		if (tmp < arr[i + 1])
 		{
-			max_nbr = b->tab[i];
-			max_index = i;
+			tmp = arr[i + 1];
+			x = i + 1;
 		}
 		i++;
 	}
-	return (max_index);
+	free(arr);
+	return (x);
 }

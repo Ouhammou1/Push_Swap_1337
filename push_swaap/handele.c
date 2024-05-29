@@ -32,7 +32,7 @@ int	error_syntax_pp(char *str)
 	if ((str[i] != '+' || str[i] != '-') && 
 		(str[i + 1] <= '0' && str[i + 1] >= '9'))
 	{
-		return (1);
+		return (1); 
 	}
 	if ((str[i] == '+' || str[i] == '-') && 
 		!(str[i + 1] >= '0' && str[i + 1] <= '9'))
